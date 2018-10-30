@@ -1,6 +1,6 @@
 {
   "name": "html-srcsets-loader",
-  "version": "0.5.1",
+  "version": "0.5.5",
   "author": "Tobias Koppers @sokra",
   "license": "MIT",
   "description": "variant of the html loader module for webpack with a patch to load srcset attribute(s)",
@@ -9,32 +9,28 @@
     "lib"
   ],
   "scripts": {
-    "pretest": "npm run lint && npm run beautify-lint",
+    "lint": "eslint lib test",
+    "pretest": "npm run lint",
     "test": "mocha --harmony --full-trace --check-leaks",
-    "travis": "npm run cover -- --report lcovonly",
-    "lint": "eslint lib bin hot",
-    "beautify-lint": "beautify-lint lib/**/*.js hot/**/*.js bin/**/*.js benchmark/*.js test/*.js",
-    "beautify": "beautify-rewrite lib/**/*.js hot/**/*.js bin/**/*.js benchmark/*.js test/*.js",
-    "postcover": "npm run lint && npm run beautify-lint",
     "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
     "release": "standard-version"
   },
   "dependencies": {
-    "es6-templates": "^0.2.2",
+    "es6-templates": "^0.2.3",
     "fastparse": "^1.1.1",
-    "html-minifier": "^3.0.1",
-    "loader-utils": "^1.0.2",
-    "object-assign": "^4.1.0"
+    "html-minifier": "^3.5.8",
+    "loader-utils": "^1.1.0",
+    "object-assign": "^4.1.1"
   },
   "devDependencies": {
     "beautify-lint": "^1.0.4",
     "codecov.io": "^0.1.6",
     "eslint": "^3.1.1",
-    "istanbul": "^0.4.4",
+    "istanbul": "^0.4.5",
     "js-beautify": "^1.6.3",
     "mocha": "^2.5.3",
     "should": "^10.0.0",
-    "standard-version": "^4.2.0"
+    "standard-version": "^4.3.0"
   },
   "homepage": "http://github.com/ushu/html-srcset-loader",
   "repository": {
